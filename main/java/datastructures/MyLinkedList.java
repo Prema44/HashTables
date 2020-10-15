@@ -37,6 +37,27 @@ public class MyLinkedList<K> {
 			this.tail = newNode;
 		}
 	}
+	
+	public boolean delete(K key) {
+		INode<K> temp = head;
+		INode<K> prev = head;
+		if (head.getKey().equals(key)) {
+			head = head.getNext();
+		} else {
+			while (temp.getNext() != null) {
+				if (temp.getKey().equals(key))
+					break;
+				prev = temp;
+				temp = temp.getNext();
+			}
+			if (tail.getKey().equals(key)) {
+				tail = prev;
+				tail.setNext(null);
+			}
+			prev.setNext(temp.getNext());
+		}
+		return true;
+	}
 
 	public void printMyNodes() {
 		System.out.println("My Nodes: " + head);

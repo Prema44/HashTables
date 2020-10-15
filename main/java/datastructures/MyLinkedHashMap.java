@@ -69,6 +69,21 @@ public class MyLinkedHashMap<K, V> {
 		int index = hashCode % numOfBuckets;
 		return index;
 	}
+	
+	/**
+	 * finding the node and deleting it
+	 * 
+	 * @param key
+	 */
+	
+	public boolean remove(K key) {
+		int index = getBucketIndex(key);
+		MyLinkedList<K> myLinkedList = bucketArray.get(index);
+		if (myLinkedList == null)
+			return false;
+
+		return myLinkedList.delete(key);
+	}
 
 	public String toString() {
 		return "MyLinkedHashMap List{" + bucketArray + "}";
