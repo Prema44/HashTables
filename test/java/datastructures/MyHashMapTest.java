@@ -5,8 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 class MyHashMapTest {
-
-	/**
+/**
 	 * Usecase1 for finding frequency
 	 */
 	@Test
@@ -27,4 +26,4 @@ class MyHashMapTest {
 		System.out.println(map);
 		assertEquals(2, frequency);
 	}
-}
+}	
